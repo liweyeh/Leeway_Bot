@@ -1,5 +1,6 @@
 const command = {
-  PING: '!ping'
+  PING: "!ping",
+  JIMMY: "!jimmy",
 }
 
 module.exports = command;
