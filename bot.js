@@ -25,6 +25,7 @@ client.on("message", (msg) => {
         const resMsg = dialogue.FORJIMMY[keys[randomNum]]
         msg.channel.send(resMsg);
       }
+      break;
     default:
       break;
   }
