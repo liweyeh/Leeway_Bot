@@ -17,7 +17,6 @@ client.on("message", (msg) => {
     case command.JIMMY:
       if(property && !_.isEmpty(property)) {
         const targetProp = property[0].slice(1);
-        console.log(targetProp)
         msg.channel.send(dialogue.FORJIMMY[targetProp])
       } else {
         const keys = Object.keys(dialogue.FORJIMMY)
@@ -26,6 +25,9 @@ client.on("message", (msg) => {
         msg.channel.send(resMsg);
       }
       break;
+    case command.OWEN:
+      msg.channel.send(dialogue.FOROWEN.friends);
+      break
     default:
       break;
   }
