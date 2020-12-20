@@ -5,6 +5,13 @@ const command = require("./command");
 const dialogue = require("./dialogue");
 const _ = require('lodash');
 
+const randomQuote = (option) => {
+  const keys = Object.keys(option)
+  const randomNum = Math.floor(Math.random() * keys.length);
+  const resMsg = option[keys[randomNum]]
+  return resMsg; 
+}
+
 client.on("message", (msg) => {
   const primRegex = /!\w+/g; 
   const secondaryRegex = /-\w+/g;
@@ -19,18 +26,17 @@ client.on("message", (msg) => {
         const targetProp = property[0].slice(1);
         msg.channel.send(dialogue.FORJIMMY[targetProp])
       } else {
-        const keys = Object.keys(dialogue.FORJIMMY)
-        const randomNum = Math.floor(Math.random() * keys.length);
-        const resMsg = dialogue.FORJIMMY[keys[randomNum]]
-        msg.channel.send(resMsg);
+        msg.channel.send(randomQuote(dialogue.FORJIMMY));
       }
       break;
     case command.OWEN:
-      msg.channel.send(dialogue.FOROWEN.friends);
+      msg.channel.send(randomQuote(dialogue.FOROWEN));
       break
     default:
       break;
   }
 });
+
+
 
 client.login(process.env.BOTTOKEN);

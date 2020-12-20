@@ -6,6 +6,7 @@ const dialogue = {
     },
     FOROWEN:{
         friends: "Dondie has no friends",
+        jimmy: "Owen always simp for jimmy",
     }
 }
 
