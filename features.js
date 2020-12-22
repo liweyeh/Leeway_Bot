@@ -33,7 +33,7 @@ const processCommand = (cmd) => {
 };
 
 const findMembersInVChannel = (msgObj) =>{
-	return msgObj?.member?.voice?.channel?.members;
+	return msgObj.member.voice.channel && msgObj.member.voice.channel.members;
 }
 
 
