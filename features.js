@@ -32,8 +32,23 @@ const processCommand = (cmd) => {
   return { prefix, property };
 };
 
+const findMembersInVChannel = (msgObj) =>{
+	return msgObj?.member?.voice?.channel?.members;
+}
+
+
+const setMemberMute = (members, mute) => {
+	members.forEach(member => {
+		const memberVoice = member.voice;
+		memberVoice.setMute(mute)
+	})
+}
+
+
 module.exports = {
   generateDialogue: generateDialogue,
   sendMessageInChannel: sendMessageInChannel,
-  processCommand: processCommand,
+	processCommand: processCommand,
+	findMembersInVChannel: findMembersInVChannel,
+	setMemberMute: setMemberMute,
 };

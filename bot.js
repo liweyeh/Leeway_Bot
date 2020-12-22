@@ -28,6 +28,14 @@ client.on("message", (msg) => {
         features.generateDialogue(dialogue.FOROWEN, property)
       );
       break;
+    case command.MUTE:
+      const muteTarget = features.findMembersInVChannel(msg);
+      features.setMemberMute(muteTarget, true);
+      break;
+    case command.UNMUTE:
+      const unmuteTarget = features.findMembersInVChannel(msg);
+      features.setMemberMute(unmuteTarget, false);
+      break;
     default:
       break;
   }
