@@ -17,6 +17,7 @@ const command = {
   OWEN: "!owen",
   MUTE: "!mute",
   UNMUTE: "!unmute",
+  GAME: "!game",
 };
 
 const executeCommand = (prefix, property, msg) => {
