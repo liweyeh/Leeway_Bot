@@ -14,7 +14,7 @@ const dialogue = {
     test: "test1",
     test2: "test2",
   },
-  DEFAULT: "I do not have that shit talk for this person",
+  DEFAULT: "I do not have that or any shit talk for this person",
 };
 
 module.exports = dialogue;
