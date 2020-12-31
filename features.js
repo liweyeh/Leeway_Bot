@@ -34,7 +34,7 @@ const sendMessageInChannel = (channel, msgProperties) => {
     for (let i = 0; i < arrLength; i++) {
       const targetUser = msgProperties[i];
 
-      if (util.checkUser(targetUser)) {
+      if (!util.checkUser(targetUser)) {
         throw "I don't who you are trying to shit talk. Do you not know how to mention people ?";
       }
 
